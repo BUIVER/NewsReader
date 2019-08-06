@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ua3-XV-4eg">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="pcT-Bs-2Xg">
+            <objects>
+                <viewController id="Ua3-XV-4eg" customClass="WebViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vKT-Hw-QCr"/>
+                        <viewControllerLayoutGuide type="bottom" id="mLA-dx-h0x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oqr-o5-dGK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9f-uA-agp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="787"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woc-QX-lJT">
+                                <rect key="frame" x="185" y="442" width="44" height="44"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1Ux-1a-95A">
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="b9F-sI-4ih">
+                                            <rect key="frame" x="12" y="12" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="b9F-sI-4ih" firstAttribute="centerX" secondItem="1Ux-1a-95A" secondAttribute="centerX" id="k3X-01-frb"/>
+                                        <constraint firstItem="b9F-sI-4ih" firstAttribute="centerY" secondItem="1Ux-1a-95A" secondAttribute="centerY" id="zet-DS-wHQ"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LZv-qX-Kj5"/>
+                                    <constraint firstAttribute="width" constant="44" id="WPR-bu-2Q7"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="P9f-uA-agp" firstAttribute="top" secondItem="okg-qd-M4b" secondAttribute="top" id="6Ua-E6-jhD"/>
+                            <constraint firstItem="P9f-uA-agp" firstAttribute="leading" secondItem="Oqr-o5-dGK" secondAttribute="leading" id="G0J-gg-9HV"/>
+                            <constraint firstItem="mLA-dx-h0x" firstAttribute="top" secondItem="woc-QX-lJT" secondAttribute="bottom" constant="20" id="W0U-jS-9im"/>
+                            <constraint firstItem="woc-QX-lJT" firstAttribute="centerX" secondItem="P9f-uA-agp" secondAttribute="centerX" id="YZ8-yf-GEr"/>
+                            <constraint firstItem="mLA-dx-h0x" firstAttribute="top" secondItem="P9f-uA-agp" secondAttribute="bottom" constant="31" id="cuR-Qg-UJC"/>
+                            <constraint firstItem="woc-QX-lJT" firstAttribute="centerX" secondItem="Oqr-o5-dGK" secondAttribute="centerX" id="rTZ-9P-k0q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="okg-qd-M4b"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityBackground" destination="woc-QX-lJT" id="1GZ-O7-PRB"/>
+                        <outlet property="activityIndicator" destination="b9F-sI-4ih" id="Baq-pF-FOK"/>
+                        <outlet property="webView" destination="P9f-uA-agp" id="ig5-ks-1l0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4g5-cJ-IuY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1389.8550724637682" y="187.5"/>
+        </scene>
+    </scenes>
+</document>
