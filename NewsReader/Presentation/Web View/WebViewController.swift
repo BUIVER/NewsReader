@@ -19,16 +19,18 @@
     
     import UIKit
     import WebKit
-    
-    //
-    //
+
+
     class WebViewController: UIViewController {
         var titleString: String?
         var img: UIImage?
+        
         let drawingSB = UIStoryboard(name: "DrawingViewController", bundle: nil).instantiateInitialViewController() as? DrawingViewController
         override func viewDidLoad() {
             super.viewDidLoad()
             self.title = titleString
+            browserView.addObserver(self, forKeyPath: #keyPath(WKWebView.isLoading), options: .new, context: nil)
+            
             
             // Do any additional setup after loading the view.
         }
@@ -58,17 +60,17 @@
             self.present(alert, animated: true, completion: nil)
             
         }
-        
+        override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+                if(!self.browserView.isLoading) {
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                }
+                else {UIApplication.shared.isNetworkActivityIndicatorVisible = true}
+        }
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
-    }
-    
-
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+}
 
 
 

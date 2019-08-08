@@ -156,14 +156,3 @@ class NewsDetailTableViewController: UITableViewController, WKUIDelegate {
     }
     // MARK: - Navigation
 }
-/* extension NewsDetailTableViewController {
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        self.webView?.activityIndicator.startAnimating()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            }
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-            self.webView?.activityIndicator.stopAnimating()
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
-}
-*/
