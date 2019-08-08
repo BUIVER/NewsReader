@@ -6,34 +6,28 @@
 //  Copyright © 2015 Alexey. All rights reserved.
 //
 
+// Lifecycle
+// Presentation
+// NavtigationController
+// Connection between View and ViewController
+
+
 import UIKit
 import WebKit
 
-class NewsDetailTableViewController: UITableViewController, WKUIDelegate {
+class NewsDetailTableViewController: UITableViewController {
     var item: Item?
-    
     let detailNewsCellIdentifier = "DetailNewsCell"
     let detailImageNewsCellIdentifier = "DetailImageNewsCell"
     let categoriesNewsCellIdentifier = "CategoriesNewsCell"
     let mediaNewsCellIdentifier = "MediaNewsCell"
-    var webView = Bundle.main.loadNibNamed("WebView", owner: self, options: nil)?.first as? WebViewController
-    var snapshot: UIImage?
-    var currentUrl : URL?
-    let itemLinkSegueIdentifier = "WebViewSegue"
-    let categoryLinkSegueIdentifier = "CategoryLinkSegue"
-    let mediaLinkSegueIdentifier = "MediaLinkSegue"
-    let drawingSegueIdentifier = "DrawingSegue"
-    @IBOutlet weak var snapshotButton: UIBarButtonItem!
-    
+    var currentUrl: URL?
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView?.titleString = item?.title
-        self.webView?.browserView.uiDelegate = self
         self.currentUrl = self.item?.url
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 160.0
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         self.currentUrl = self.item?.url
         if let item = self.item {
@@ -43,24 +37,13 @@ class NewsDetailTableViewController: UITableViewController, WKUIDelegate {
             self.tableView.deselectRow(at: indexPath, animated: true)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: - Unwind segues
     @IBAction func webViewCall (_ sender: Any) {
-        webView?.navigation.title = self.title
-        guard let url = currentUrl else {return}
-        let request = URLRequest(url: url)
-        self.webView?.browserView.load(request)
-        self.show(webView!, sender: nil)
+        let webView = WebViewController(nibName: "WebViewController", bundle: nil)
+        webView.item = item
+        self.show(webView, sender: nil)
     }
-    
-    // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        guard let _ = self.item else {
+        guard self.item != nil else {
             return 1
         }
         return 3
@@ -75,8 +58,6 @@ class NewsDetailTableViewController: UITableViewController, WKUIDelegate {
         }
         return nil
     }
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let item = self.item {
             if section == 0 {
@@ -89,43 +70,44 @@ class NewsDetailTableViewController: UITableViewController, WKUIDelegate {
         }
         return 0
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let detailId = self.detailImageNewsCellIdentifier
         guard let item = self.item else {
             return UITableViewCell()
         }
-        
         if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.categoriesNewsCellIdentifier, for: indexPath) as UITableViewCell
-            
-            let category = item.categories![indexPath.row] as! Category
+            let categoryId = self.categoriesNewsCellIdentifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: categoryId,
+                                                     for: indexPath) as UITableViewCell
+            guard let category = item.categories![indexPath.row] as? Category else {
+                return UITableViewCell()
+            }
             cell.textLabel?.text = category.name
-            
             return cell
         }
-        
         if indexPath.section == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.mediaNewsCellIdentifier, for: indexPath) as UITableViewCell
-            
-            let media = item.media![indexPath.row] as! Media
+            let mediaId = self.mediaNewsCellIdentifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: mediaId,
+                                                     for: indexPath) as UITableViewCell
+            guard let media = item.media![indexPath.row] as? Media else {
+                return UITableViewCell()
+            }
             cell.textLabel?.text = media.link
-            
             return cell
         }
-        
         guard let imageURL = item.thumbnail else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.detailNewsCellIdentifier) as! DetailNewsCell
-            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: detailId) as? DetailNewsCell else {
+                return UITableViewCell()
+            }
             cell.titleLabel.text = item.title
             cell.dateLabel.text = item.date?.formatDate()
             cell.authorLabel.text = item.creator
             cell.descriptionLabel.text = item.minifiedDescription
-            
             return cell
         }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.detailImageNewsCellIdentifier) as! DetailImageNewsCell
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: detailId) as? DetailImageNewsCell else {
+            return UITableViewCell()
+        }
         cell.titleLabel.text = item.title
         cell.dateLabel.text = item.date?.formatDate()
         cell.authorLabel.text = item.creator
@@ -135,21 +117,18 @@ class NewsDetailTableViewController: UITableViewController, WKUIDelegate {
         } else {
             cell.thumbnailImageView.setImageFromURL(url: imageURL)
         }
-        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 1:
-            let cell = item?.categories![indexPath.row] as! Category
+            guard let cell = item?.categories![indexPath.row] as? Category else {return}
             self.currentUrl = cell.url
             webViewCall(self)
-            break
         case 2:
-            let cell = item?.media![indexPath.row] as! Media
+            guard let cell = item?.media![indexPath.row] as? Media else {return}
             self.currentUrl = cell.url
             webViewCall(self)
-            break
         default:
             break
         }

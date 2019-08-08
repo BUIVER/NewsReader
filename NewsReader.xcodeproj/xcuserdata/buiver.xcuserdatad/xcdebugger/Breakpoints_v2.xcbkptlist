@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsReader/Presentation/News Table View/NewsTableViewController.swift"
-            timestampString = "586953309.503806"
+            timestampString = "586965362.963514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "scrollViewDidEndDragging(_:willDecelerate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsReader/Presentation/News Table View/NewsTableViewController.swift"
-            timestampString = "586953309.5039051"
+            timestampString = "586965362.963573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "scrollViewDidEndDecelerating(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsReader/Presentation/News Table View/NewsTableViewController.swift"
-            timestampString = "586953309.503953"
+            timestampString = "586965362.963614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "scrollViewDidEndDecelerating(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsReader/Presentation/News Table View/NewsTableViewController.swift"
-            timestampString = "586953309.503996"
+            timestampString = "586965362.9636509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "scrollViewDidEndDragging(_:willDecelerate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,239 +106,6 @@
             startingLineNumber = "92"
             endingLineNumber = "92"
             landmarkName = "-dismissView:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsReader/Presentation/News Detailed Table/NewsDetailTableViewController.swift"
-            timestampString = "586953309.50414"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "NewsDetailTableViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.webView.getter : Swift.Optional&lt;NewsReader.WebViewController&gt;"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586942399.754589"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "114">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.webView.setter : Swift.Optional&lt;NewsReader.WebViewController&gt;"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586942399.759111"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.webView.modify : Swift.Optional&lt;NewsReader.WebViewController&gt;"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586942399.763635"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.webView.modify : Swift.Optional&lt;NewsReader.WebViewController&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586942399.77397"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.init(style: __C.UITableViewStyle) -&gt; NewsReader.NewsDetailTableViewController"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586942399.777355"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "456">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; NewsReader.NewsDetailTableViewController"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586942399.7797509"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "501">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;NewsReader.NewsDetailTableViewController&gt;"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586942399.797949"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "456">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsReader/Presentation/News Detailed Table/NewsDetailTableViewController.swift"
-            timestampString = "586953309.5041831"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "NewsDetailTableViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.mediaNewsCellIdentifier.getter : Swift.String"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586940627.3407"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "53">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.init(style: __C.UITableViewStyle) -&gt; NewsReader.NewsDetailTableViewController"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586940627.342288"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "416">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; NewsReader.NewsDetailTableViewController"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586940627.343637"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "461">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsReader.NewsDetailTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;NewsReader.NewsDetailTableViewController&gt;"
-                  moduleName = "NewsReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/buiver/Desktop/NewsReader/NewsReader/Presentation/News%20Detailed%20Table/NewsDetailTableViewController.swift"
-                  timestampString = "586940627.345699"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "416">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsReader/Presentation/News Detailed Table/NewsDetailTableViewController.swift"
-            timestampString = "586953309.504223"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsReader/Presentation/News Detailed Table/NewsDetailTableViewController.swift"
-            timestampString = "586953309.504258"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

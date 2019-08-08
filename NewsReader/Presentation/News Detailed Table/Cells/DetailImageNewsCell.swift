@@ -10,5 +10,4 @@ import UIKit
 
 class DetailImageNewsCell: DetailNewsCell {
     @IBOutlet var thumbnailImageView: UIImageView!
-    
 }

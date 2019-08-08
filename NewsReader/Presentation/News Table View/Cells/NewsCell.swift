@@ -35,4 +35,3 @@ class NewsCell: UITableViewCell {
         self.dateLabel.text = item.date?.formatDate()
     }
 }
-

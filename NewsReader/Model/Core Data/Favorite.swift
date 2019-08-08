@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 class Favorite: NSManagedObject {
     var url: NSURL? {
         guard let link  = self.link else {

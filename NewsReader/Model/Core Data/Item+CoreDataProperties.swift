@@ -19,9 +19,7 @@ extension Item {
     @NSManaged var link: String?
     @NSManaged var title: String?
     @NSManaged var thumbnailData: NSData?
-    
     @NSManaged var channel: Channel?
-    
     @NSManaged var categories: NSOrderedSet?
     @NSManaged var media: NSOrderedSet?
 }

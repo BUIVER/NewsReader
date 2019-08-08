@@ -19,6 +19,5 @@ extension Channel {
     @NSManaged var language: String?
     @NSManaged var link: String?
     @NSManaged var title: String?
-    
     @NSManaged var items: NSOrderedSet?
 }

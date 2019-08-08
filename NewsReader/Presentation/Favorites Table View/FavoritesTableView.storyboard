@@ -61,7 +61,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="600"/>
                     <connections>
-                        <segue destination="tHW-o7-CnN" kind="show" id="WPA-jl-9b3"/>
+                        <segue destination="tHW-o7-CnN" kind="show" identifier="FavoritesSegue" id="WPA-jl-9b3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWn-uY-dpn" userLabel="First Responder" sceneMemberID="firstResponder"/>

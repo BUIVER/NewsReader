@@ -9,13 +9,11 @@
 import UIKit
 
 class DetailNewsCell: UITableViewCell {
-    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
 //    @IBOutlet var thumbnailImageView: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

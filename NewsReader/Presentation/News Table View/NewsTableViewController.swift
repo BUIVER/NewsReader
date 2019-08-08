@@ -10,7 +10,6 @@
 // Fix back from Web view
 // 23:00 - 23 Sep 2019 
 
-
 import UIKit
 import CoreData
 
@@ -18,7 +17,6 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
     var managedContext: NSManagedObjectContext!
     var channel: Channel?
     var imageDownloadsInProgress = [IndexPath: ImageDownloader]()
-    
     lazy var rssLink: String = {
         var link: String = "http://www.nytimes.com/services/xml/rss/nyt/World.xml"
         if let channel = self.channel {
@@ -28,13 +26,10 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
         }
         return link
     }()
-    
     @IBOutlet var table: UITableView!
     let detailSegueIdentifier = "DetailedSegue"
     let favoritesSegueIdentifier = "FavoritesSegue"
-    
     // MARK: - View Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.table.dataSource = self
@@ -44,7 +39,6 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
         self.managedContext = CoreDataStack.instance.context
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 160.0
-        
         if self.fetchData() {
             if let channel = self.channel {
                 self.title = channel.title
@@ -52,23 +46,12 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
             self.tableView.reloadData()
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: - Unwind segues
-    
-    @IBAction func favoritesExitSegue(_ segue:UIStoryboardSegue) {
+    @IBAction func favoritesExitSegue(_ segue: UIStoryboardSegue) {
         self.beginParsing()
     }
-    
-    // MARK: - Button actions
-    
     @IBAction func changeRSSSource(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "RSS Source", message: "Change RSS source link", preferredStyle: .alert)
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default) { (action: UIAlertAction!) -> Void in
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (_: UIAlertAction!) -> Void in
             let textField = alert.textFields![0]
             if let newLink = textField.text {
                 self.rssLink = newLink
@@ -79,27 +62,19 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
         alert.addTextField(configurationHandler: nil)
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
-        
         present(alert, animated: true, completion: nil)
     }
-    
     @IBAction func refreshButtonAction(_ sender: UIBarButtonItem) {
         self.beginParsing()
     }
-    
-    // MARK: - Helpers
-    
     func sendMessageWithError(error: Error, withTitle title: String) {
         let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
-        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
     func beginParsing() {
         let privateManagedContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         privateManagedContext.parent = self.managedContext
-        
         privateManagedContext.perform {
             DispatchQueue.global().async { () -> Void in
                 if let url = URL(string: self.rssLink) {
@@ -110,12 +85,10 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
             }
         }
     }
-    
     func fetchData() -> Bool {
         let channelFetch = NSFetchRequest<Channel>(entityName: "Channel")
         do {
             let results = try self.managedContext.fetch(channelFetch)
-            
             if results.count > 0 {
                 self.channel = results.first
                 return true
@@ -127,9 +100,7 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
             return false
         }
     }
-    
     // MARK: - NRRSSParserDelegate
-    
     func parsingWasStarted() {
         if let leftBarButtomItem = self.navigationItem.leftBarButtonItem {
             leftBarButtomItem.isEnabled = false
@@ -137,12 +108,10 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
         self.title = "Loading..."
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
-    
     func parsingWasFinished(_ error: Error?) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         if let error = error {
             self.sendMessageWithError(error: error, withTitle: "Parsing error")
-            
             if self.fetchData() {
                 if let channel = self.channel {
                     self.title = channel.title
@@ -151,7 +120,6 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
             } else {
                 self.title = "News Reader"
             }
-            
             if let leftBarButtomItem = self.navigationItem.leftBarButtonItem {
                 leftBarButtomItem.isEnabled = true
             }
@@ -163,7 +131,6 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
                 }
                 self.tableView.reloadData()
             }
-            
             if let leftBarButtomItem = self.navigationItem.leftBarButtonItem {
                 leftBarButtomItem.isEnabled = true
             }
@@ -179,32 +146,27 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
         guard let visiblePaths = self.tableView.indexPathsForVisibleRows else {
             return
         }
-        
         for indexPath in visiblePaths {
-            let item = channel.items![indexPath.row] as! Item
-            if let _ = item.thumbnailImage {
+            guard let item = channel.items?[indexPath.row] as? Item else {
+                return
+            }
+            if item.thumbnailImage != nil {
                 continue
             }
-            if let _ = item.thumbnail {
-                let cell = tableView.cellForRow(at: indexPath) as! ImageNewsCell
+            if item.thumbnail != nil {
+                guard let cell = tableView.cellForRow(at: indexPath) as? ImageNewsCell else {return}
                 self.startThumbnailDownload(item: item, indexPath: indexPath, cell: cell)
             }
         }
     }
-    
-    // MARK: - UIScrollViewDelegate
-    
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             self.loadImagesForOnscreenRows()
         }
     }
- 
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.loadImagesForOnscreenRows()
     }
-    
-    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == detailSegueIdentifier {
             if let destination = segue.destination as? NewsDetailTableViewController {
@@ -234,59 +196,63 @@ extension NewsTableViewController {
         }
         return channel.items!.count
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let channel = self.channel else {
             return UITableViewCell()
         }
-        let item = channel.items![indexPath.row] as! Item
+        if let item = channel.items?[indexPath.row] as? Item {
         let check = item.thumbnail == nil
-        return check ? self.newsCellAtIndexPath(indexPath: indexPath, channel: channel, cellType: NewsCell.self) : self.imageNewsCellAtIndexPath(indexPath: indexPath, channel: channel, cellType: ImageNewsCell.self)
+            return check ? self.newsCellAtIndexPath(indexPath: indexPath,
+                                                    channel: channel,
+                                                    cellType: NewsCell.self,
+                                                    item: item) : self.imageNewsCellAtIndexPath(indexPath: indexPath,
+                                                                                                channel: channel,
+                                                                                                cellType: ImageNewsCell.self,
+                                                                                                item: item)
+        } else {
+            return UITableViewCell()
+        }
     }
-    
-    func newsCellAtIndexPath(indexPath: IndexPath, channel: Channel, cellType: NewsCell.Type) -> UITableViewCell {
+    func newsCellAtIndexPath(indexPath: IndexPath,
+                             channel: Channel,
+                             cellType: NewsCell.Type,
+                             item: Item) -> UITableViewCell {
         return tableView.dequeueCell(for: cellType, configure: ({cell in
-            let item = channel.items![indexPath.row] as! Item
             cell.fillNewsCell(item)
         }))
     }
-    func imageNewsCellAtIndexPath(indexPath: IndexPath, channel: Channel, cellType: ImageNewsCell.Type) -> UITableViewCell {
+    func imageNewsCellAtIndexPath(indexPath: IndexPath,
+                                  channel: Channel,
+                                  cellType: ImageNewsCell.Type,
+                                  item: Item) -> UITableViewCell {
         return tableView.dequeueCell(for: cellType, configure: ({cell in
-            let item = channel.items![indexPath.row] as! Item
             cell.fillNewsCell(item)
-            if(item.thumbnail != nil) {
-                
+            if item.thumbnail != nil {
                 cell.tag = indexPath.row
                 if let thumbnailImage = item.thumbnailImage {
                     cell.thumbnailImageView.image = thumbnailImage
-                }
-                else {
+                } else {
                     if self.tableView.isDragging == false && self.tableView.isDecelerating == false {
                         self.startThumbnailDownload(item: item, indexPath: indexPath, cell: cell)
                     }
-                    cell.thumbnailImageView.setImageAnimated(image: UIImage(named: "ThumbnailPlaceholder.png"), interval: 0.1, animationOption: .transitionCrossDissolve)
+                    cell.thumbnailImageView.setImageAnimated(image: UIImage(named: "ThumbnailPlaceholder.png"),
+                                                             interval: 0.1,
+                                                             animationOption: .transitionCrossDissolve)
                 }
             }
-            
         }))
-        
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "DetailedSegue", sender: nil)
     }
-    // MARK: - Image downloading helpers
-    
     func startThumbnailDownload(item: Item, indexPath: IndexPath, cell: ImageNewsCell) {
-        if let _ = self.imageDownloadsInProgress[indexPath] {
+        if self.imageDownloadsInProgress[indexPath] != nil {
             return
         }
         guard let thumbnailURL = item.thumbnail else {
             return
         }
-        
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
         let imageDownloader = ImageDownloader()
         imageDownloader.downloadImageWithURL(url: thumbnailURL, completion: { [unowned self] (image, error) -> Void in
             if let error = error {
@@ -297,16 +263,15 @@ extension NewsTableViewController {
                 }
                 return
             }
-            
             DispatchQueue.main.async {
                 if indexPath.row == cell.tag {
-                    cell.thumbnailImageView.setImageAnimated(image: image, interval: 0.2, animationOption: .transitionFlipFromTop)
+                    cell.thumbnailImageView.setImageAnimated(image: image,
+                                                             interval: 0.2,
+                                                             animationOption: .transitionFlipFromTop)
                     item.thumbnailImage = image
                     CoreDataStack.instance.saveContext()
                 }
             }
-            
-            
             self.imageDownloadsInProgress.removeValue(forKey: indexPath)
             if self.imageDownloadsInProgress.count == 0 {
                 DispatchQueue.main.async { UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -328,11 +293,11 @@ extension UITableViewCell: CellIdentifiable {
 }
 
 extension UITableView {
-    func dequeueCell<Type: CellIdentifiable>(for type: Type.Type, configure: ((Type) -> Void)? = nil) -> UITableViewCell {
+    func dequeueCell<Type: CellIdentifiable>(for type: Type.Type,
+                                             configure: ((Type) -> Void)? = nil) -> UITableViewCell {
         guard let cell = dequeueReusableCell(withIdentifier: Type.identifier) as? Type else {
             return UITableViewCell()
         }
-        
         configure?(cell)
         return cell
     }

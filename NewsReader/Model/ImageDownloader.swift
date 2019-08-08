@@ -9,7 +9,7 @@
 import UIKit
 
 class ImageDownloader {
-    func downloadImageWithURL(url: URL, completion: @escaping (UIImage?, Error?) -> Void) { // TODO
+    func downloadImageWithURL(url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
         URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
             if let data = data {
                 let image = UIImage(data: data)

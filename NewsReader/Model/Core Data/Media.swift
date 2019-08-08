@@ -17,6 +17,5 @@ class Media: NSManagedObject {
         if let url = URL(string: link) {
             return url
         }
-        return nil
-    }    
+        return nil}    
 }

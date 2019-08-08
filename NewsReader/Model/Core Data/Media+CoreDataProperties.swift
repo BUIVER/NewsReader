@@ -13,7 +13,6 @@ import Foundation
 import CoreData
 
 extension Media {
-    @NSManaged var link: String?
-    
+    @NSManaged var link: String?  
     @NSManaged var item: Item?
 }

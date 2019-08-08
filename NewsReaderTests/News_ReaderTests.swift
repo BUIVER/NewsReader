@@ -5,7 +5,7 @@
 //  Created by Alexey on 01.10.15.
 //  Copyright © 2015 Alexey. All rights reserved.
 //
-
+/*
 import XCTest
 //@testable import News_Reader
 
@@ -34,3 +34,4 @@ class News_ReaderTests: XCTestCase {
     }
     
 }
+*/
