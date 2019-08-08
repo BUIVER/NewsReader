@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="N2z-5C-zCj" id="nZh-BZ-7an"/>
                 <outlet property="browserView" destination="pmr-sC-yl9" id="85X-hu-7qv"/>
+                <outlet property="navigation" destination="3hg-Y7-ajO" id="43U-Bb-JG0"/>
                 <outlet property="view" destination="haV-1f-007" id="bIV-Mu-kaV"/>
             </connections>
         </placeholder>
@@ -44,5 +45,19 @@
             <viewLayoutGuide key="safeArea" id="FOV-Bo-DUR"/>
             <point key="canvasLocation" x="877" y="91"/>
         </view>
+        <navigationItem title="Title" id="3hg-Y7-ajO">
+            <rightBarButtonItems>
+                <barButtonItem systemItem="action" id="mhM-Fb-ctC">
+                    <connections>
+                        <action selector="copyAction:" destination="-1" id="EQm-WX-SbD"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem systemItem="camera" id="nuN-IX-9ij">
+                    <connections>
+                        <action selector="takeSnapshot:" destination="-1" id="Owe-n2-41t"/>
+                    </connections>
+                </barButtonItem>
+            </rightBarButtonItems>
+        </navigationItem>
     </objects>
 </document>
