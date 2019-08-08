@@ -25,20 +25,20 @@
                             <constraint firstAttribute="height" constant="100" id="cb5-YO-fYl"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="749" verticalHuggingPriority="749" verticalCompressionResistancePriority="751" misplaced="YES" placeholderIntrinsicWidth="455" placeholderIntrinsicHeight="21" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mj-MI-nuL">
-                        <rect key="frame" x="120" y="42" width="274" height="36"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="749" verticalHuggingPriority="749" verticalCompressionResistancePriority="751" misplaced="YES" placeholderIntrinsicWidth="455" placeholderIntrinsicHeight="21" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mj-MI-nuL">
+                        <rect key="frame" x="120" y="37" width="274" height="35"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" placeholderIntrinsicWidth="455" placeholderIntrinsicHeight="21" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWO-WK-mRs">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" placeholderIntrinsicWidth="455" placeholderIntrinsicHeight="21" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWO-WK-mRs">
                         <rect key="frame" x="120" y="8" width="264" height="26"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="455" placeholderIntrinsicHeight="18" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFN-O1-08j">
-                        <rect key="frame" x="120" y="86" width="274" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" placeholderIntrinsicWidth="455" placeholderIntrinsicHeight="18" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFN-O1-08j">
+                        <rect key="frame" x="120" y="80" width="274" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -53,11 +53,11 @@
                     <constraint firstItem="QyN-4x-pfI" firstAttribute="top" secondItem="mQe-xk-DCT" secondAttribute="top" constant="8" id="M5G-CJ-E4w"/>
                     <constraint firstAttribute="bottom" secondItem="AFN-O1-08j" secondAttribute="bottom" constant="12.5" id="SCg-4D-GRl"/>
                     <constraint firstItem="AFN-O1-08j" firstAttribute="leading" secondItem="QyN-4x-pfI" secondAttribute="trailing" constant="10" id="THG-sk-jQP"/>
-                    <constraint firstItem="AFN-O1-08j" firstAttribute="top" secondItem="8mj-MI-nuL" secondAttribute="bottom" constant="8" id="cxD-S5-FP1"/>
                     <constraint firstItem="LWO-WK-mRs" firstAttribute="top" secondItem="mQe-xk-DCT" secondAttribute="top" constant="8" id="eZg-LV-OYr"/>
-                    <constraint firstItem="8mj-MI-nuL" firstAttribute="top" secondItem="LWO-WK-mRs" secondAttribute="bottom" constant="8" id="fBG-PG-Yh4"/>
+                    <constraint firstItem="8mj-MI-nuL" firstAttribute="top" secondItem="LWO-WK-mRs" secondAttribute="bottom" constant="3" id="fBG-PG-Yh4"/>
                     <constraint firstAttribute="trailing" secondItem="AFN-O1-08j" secondAttribute="trailing" constant="20" id="mHR-2y-XRj"/>
                     <constraint firstItem="QyN-4x-pfI" firstAttribute="leading" secondItem="mQe-xk-DCT" secondAttribute="leading" constant="10" id="uXb-7B-Ikf"/>
+                    <constraint firstItem="AFN-O1-08j" firstAttribute="top" secondItem="8mj-MI-nuL" secondAttribute="bottom" constant="8" id="wyQ-U0-Yww"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

@@ -89,7 +89,9 @@
 }
 
 // MARK - Unwind segues
-
+- (IBAction)dismissView:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (IBAction)brushSettingsExitSegue:(UIStoryboardSegue *)segue {
 }
 

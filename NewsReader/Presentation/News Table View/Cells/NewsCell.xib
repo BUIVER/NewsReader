@@ -24,30 +24,30 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jit-Fw-gwt">
-                        <rect key="frame" x="13" y="41" width="384" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="749" verticalHuggingPriority="749" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tp1-Ze-IZm">
-                        <rect key="frame" x="13" y="67" width="384" height="18"/>
+                        <rect key="frame" x="16" y="42" width="383" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jit-Fw-gwt">
+                        <rect key="frame" x="16" y="78" width="378" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="tp1-Ze-IZm" firstAttribute="top" secondItem="Jit-Fw-gwt" secondAttribute="bottom" constant="8" symbolic="YES" id="JjQ-u9-SgJ"/>
-                    <constraint firstItem="ZDT-Wq-0K6" firstAttribute="top" secondItem="TjC-Hr-1k8" secondAttribute="top" constant="12" id="TDw-wr-ZOE"/>
-                    <constraint firstItem="ZDT-Wq-0K6" firstAttribute="leading" secondItem="TjC-Hr-1k8" secondAttribute="leading" constant="16" id="TnD-fy-A3s"/>
-                    <constraint firstItem="Jit-Fw-gwt" firstAttribute="leading" secondItem="TjC-Hr-1k8" secondAttribute="leadingMargin" constant="-7" id="XZ7-QU-XE5"/>
-                    <constraint firstItem="tp1-Ze-IZm" firstAttribute="trailing" secondItem="Jit-Fw-gwt" secondAttribute="trailing" id="bbY-KW-aqm"/>
-                    <constraint firstItem="tp1-Ze-IZm" firstAttribute="leading" secondItem="Jit-Fw-gwt" secondAttribute="leading" id="dQM-Hg-2lT"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Jit-Fw-gwt" secondAttribute="trailing" constant="-3" id="f4x-wt-Zha"/>
-                    <constraint firstAttribute="bottom" secondItem="tp1-Ze-IZm" secondAttribute="bottom" constant="18.5" id="fli-SQ-2EL"/>
-                    <constraint firstItem="Jit-Fw-gwt" firstAttribute="top" secondItem="ZDT-Wq-0K6" secondAttribute="bottom" constant="8.5" id="sdA-l8-PqX"/>
-                    <constraint firstAttribute="trailing" secondItem="ZDT-Wq-0K6" secondAttribute="trailing" constant="14" id="tcA-VM-GeZ"/>
+                    <constraint firstItem="Jit-Fw-gwt" firstAttribute="top" secondItem="tp1-Ze-IZm" secondAttribute="bottom" constant="8" id="37h-qk-QCd"/>
+                    <constraint firstItem="Jit-Fw-gwt" firstAttribute="leading" secondItem="TjC-Hr-1k8" secondAttribute="leading" constant="16" id="4vb-xe-xB8"/>
+                    <constraint firstItem="ZDT-Wq-0K6" firstAttribute="leading" secondItem="TjC-Hr-1k8" secondAttribute="leading" constant="16" id="5P8-ZV-B9O"/>
+                    <constraint firstItem="tp1-Ze-IZm" firstAttribute="top" secondItem="ZDT-Wq-0K6" secondAttribute="bottom" constant="9.5" id="JuR-or-quE"/>
+                    <constraint firstAttribute="trailing" secondItem="tp1-Ze-IZm" secondAttribute="trailing" constant="15" id="LLM-RS-hCD"/>
+                    <constraint firstAttribute="bottom" secondItem="Jit-Fw-gwt" secondAttribute="bottom" constant="7.5" id="Lrg-xQ-CHz"/>
+                    <constraint firstAttribute="trailing" secondItem="ZDT-Wq-0K6" secondAttribute="trailing" constant="14" id="csh-G5-REp"/>
+                    <constraint firstItem="tp1-Ze-IZm" firstAttribute="leading" secondItem="TjC-Hr-1k8" secondAttribute="leading" constant="16" id="wsP-7L-qqO"/>
+                    <constraint firstAttribute="trailing" secondItem="Jit-Fw-gwt" secondAttribute="trailing" constant="20" id="xSV-dK-0BL"/>
+                    <constraint firstItem="ZDT-Wq-0K6" firstAttribute="top" secondItem="TjC-Hr-1k8" secondAttribute="top" constant="12" id="xue-mx-N7X"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -55,7 +55,7 @@
                 <outlet property="descriptionLabel" destination="tp1-Ze-IZm" id="zqw-kj-xDC"/>
                 <outlet property="titleLabel" destination="ZDT-Wq-0K6" id="t2A-gd-ADw"/>
             </connections>
-            <point key="canvasLocation" x="-200" y="-462"/>
+            <point key="canvasLocation" x="-200.00000000000003" y="-462.05357142857139"/>
         </tableViewCell>
     </objects>
 </document>

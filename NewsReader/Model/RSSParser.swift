@@ -226,3 +226,9 @@ class RSSParser: NSObject, XMLParserDelegate {
         }
     }
 }
+
+protocol RSSParserDelegate {
+    func parsingWasStarted()
+    func parsingWasFinished(_ error: Error?)
+}
+

@@ -12,7 +12,7 @@ class NewsCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,6 +32,7 @@ class NewsCell: UITableViewCell {
     func fillNewsCell(_ item: Item) {
         self.titleLabel.text = item.title
         self.descriptionLabel.text = item.minifiedDescription
-        self.dateLabel.text = item.date
+        self.dateLabel.text = item.date?.formatDate()
     }
 }
+

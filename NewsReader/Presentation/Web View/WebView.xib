@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController nibName="" modalPresentationStyle="formSheet" id="mSV-wx-5yt" userLabel="WebViewController" customClass="WebViewController" customModule="NewsReader" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="haV-1f-007">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmr-sC-yl9">
+                        <rect key="frame" x="-1" y="56" width="415" height="783"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <wkWebViewConfiguration key="configuration">
+                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                            <wkPreferences key="preferences"/>
+                        </wkWebViewConfiguration>
+                    </wkWebView>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N2z-5C-zCj">
+                        <rect key="frame" x="188" y="429" width="37" height="37"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </activityIndicatorView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <viewLayoutGuide key="safeArea" id="FOV-Bo-DUR"/>
+            </view>
+            <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+            <navigationItem key="navigationItem" title="navigationTitle" id="ezW-MN-ChP">
+                <rightBarButtonItems>
+                    <barButtonItem systemItem="camera" id="MHs-2g-BlB">
+                        <connections>
+                            <action selector="takeSnapshot:" destination="mSV-wx-5yt" id="bQW-Pd-UNU"/>
+                        </connections>
+                    </barButtonItem>
+                    <barButtonItem systemItem="action" id="NKZ-Le-II7">
+                        <connections>
+                            <action selector="copyAction:" destination="mSV-wx-5yt" id="dyI-0G-GGz"/>
+                        </connections>
+                    </barButtonItem>
+                </rightBarButtonItems>
+            </navigationItem>
+            <connections>
+                <outlet property="activityIndicator" destination="N2z-5C-zCj" id="G3D-X8-LTp"/>
+                <outlet property="browserView" destination="pmr-sC-yl9" id="ULM-VY-8z2"/>
+                <outlet property="navigation" destination="ezW-MN-ChP" id="v8i-Uz-T52"/>
+            </connections>
+            <point key="canvasLocation" x="1098" y="54"/>
+        </viewController>
+    </objects>
+</document>

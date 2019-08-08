@@ -21,8 +21,6 @@
 		4BDF647222F9B3C8002936DE /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF644E22F9B3C6002936DE /* NewsCell.swift */; };
 		4BDF647322F9B3C8002936DE /* NewsDetailedTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF644F22F9B3C6002936DE /* NewsDetailedTableView.storyboard */; };
 		4BDF647422F9B3C8002936DE /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF645022F9B3C6002936DE /* Favorite+CoreDataProperties.swift */; };
-		4BDF647522F9B3C8002936DE /* RSSParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF645122F9B3C6002936DE /* RSSParserDelegate.swift */; };
-		4BDF647622F9B3C8002936DE /* WebViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF645222F9B3C6002936DE /* WebViewStoryboard.storyboard */; };
 		4BDF647722F9B3C8002936DE /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF645322F9B3C6002936DE /* Media.swift */; };
 		4BDF647822F9B3C8002936DE /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF645422F9B3C6002936DE /* Channel.swift */; };
 		4BDF647922F9B3C8002936DE /* ImageNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF645522F9B3C6002936DE /* ImageNewsCell.swift */; };
@@ -38,11 +36,15 @@
 		4BDF648322F9B3C8002936DE /* FavoritesTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF646122F9B3C7002936DE /* FavoritesTableView.storyboard */; };
 		4BDF648422F9B3C8002936DE /* DetailNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF646222F9B3C7002936DE /* DetailNewsCell.swift */; };
 		4BDF648522F9B3C8002936DE /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF646322F9B3C7002936DE /* Media+CoreDataProperties.swift */; };
-		4BDF648722F9B3C8002936DE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF646722F9B3C8002936DE /* WebViewController.swift */; };
 		4BDF648822F9B3C8002936DE /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF646822F9B3C8002936DE /* FavoritesTableViewController.swift */; };
 		4BDF648922F9B3C8002936DE /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF646922F9B3C8002936DE /* DrawingViewController.m */; };
 		4BDF648A22F9B3C8002936DE /* BrushSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF646A22F9B3C8002936DE /* BrushSettingsViewController.m */; };
 		4BDF64A122F9B81F002936DE /* NewsReader-Bridging-Header.h in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF644622F9B3C4002936DE /* NewsReader-Bridging-Header.h */; };
+		4BDF64A622FAB0B7002936DE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A522FAB0B7002936DE /* WebKit.framework */; };
+		4BDF64A922FAB52B002936DE /* DrawingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF64A822FAB52B002936DE /* DrawingViewController.storyboard */; };
+		4BDF64AB22FAB7AA002936DE /* WebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF64AA22FAB7AA002936DE /* WebView.xib */; };
+		4BDF64AD22FC005D002936DE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64AC22FC005D002936DE /* WebViewController.swift */; };
+		4BF47A8822FC1C8500D64840 /* String+FormatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF47A8722FC1C8500D64840 /* String+FormatData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +65,6 @@
 		4BDF644E22F9B3C6002936DE /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		4BDF644F22F9B3C6002936DE /* NewsDetailedTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsDetailedTableView.storyboard; sourceTree = "<group>"; };
 		4BDF645022F9B3C6002936DE /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4BDF645122F9B3C6002936DE /* RSSParserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParserDelegate.swift; sourceTree = "<group>"; };
-		4BDF645222F9B3C6002936DE /* WebViewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebViewStoryboard.storyboard; sourceTree = "<group>"; };
 		4BDF645322F9B3C6002936DE /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		4BDF645422F9B3C6002936DE /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		4BDF645522F9B3C6002936DE /* ImageNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNewsCell.swift; sourceTree = "<group>"; };
@@ -82,10 +82,14 @@
 		4BDF646322F9B3C7002936DE /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4BDF646422F9B3C7002936DE /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
 		4BDF646622F9B3C7002936DE /* BrushSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushSettingsViewController.h; sourceTree = "<group>"; };
-		4BDF646722F9B3C8002936DE /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4BDF646822F9B3C8002936DE /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		4BDF646922F9B3C8002936DE /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
 		4BDF646A22F9B3C8002936DE /* BrushSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushSettingsViewController.m; sourceTree = "<group>"; };
+		4BDF64A522FAB0B7002936DE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		4BDF64A822FAB52B002936DE /* DrawingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = DrawingViewController.storyboard; path = "NewsReader/Presentation/Drawing View /DrawingViewController.storyboard"; sourceTree = SOURCE_ROOT; };
+		4BDF64AA22FAB7AA002936DE /* WebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebView.xib; sourceTree = "<group>"; };
+		4BDF64AC22FC005D002936DE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		4BF47A8722FC1C8500D64840 /* String+FormatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FormatData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDF64A622FAB0B7002936DE /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +109,7 @@
 			children = (
 				4BDF643022F9B2E9002936DE /* NewsReader */,
 				4BDF642F22F9B2E9002936DE /* Products */,
+				4BDF64A422FAB0B6002936DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,8 +124,10 @@
 		4BDF643022F9B2E9002936DE /* NewsReader */ = {
 			isa = PBXGroup;
 			children = (
+				4BDF64A722FAB144002936DE /* Extensions */,
 				4BDF649522F9B5B0002936DE /* Model */,
 				4BDF648D22F9B45B002936DE /* Presentation */,
+				4BDF643122F9B2E9002936DE /* AppDelegate.swift */,
 				4BDF648C22F9B3DA002936DE /* Support Files */,
 			);
 			path = NewsReader;
@@ -128,12 +136,10 @@
 		4BDF648C22F9B3DA002936DE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4BDF644D22F9B3C5002936DE /* UIImageView+ImageSetters.swift */,
 				4BDF644022F9B2EA002936DE /* Info.plist */,
 				4BDF643B22F9B2EA002936DE /* Assets.xcassets */,
 				4BDF644622F9B3C4002936DE /* NewsReader-Bridging-Header.h */,
 				4BDF643D22F9B2EA002936DE /* LaunchScreen.storyboard */,
-				4BDF643122F9B2E9002936DE /* AppDelegate.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 		4BDF648D22F9B45B002936DE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				4BDF649722F9B63C002936DE /* Drawing View  */,
 				4BDF649E22F9B798002936DE /* Web View */,
 				4BDF649C22F9B761002936DE /* Favorites Table View */,
 				4BDF649822F9B66A002936DE /* News Detailed Table */,
@@ -159,35 +166,17 @@
 			path = "News Table View";
 			sourceTree = "<group>";
 		};
-		4BDF649222F9B523002936DE /* Image Load Model */ = {
-			isa = PBXGroup;
-			children = (
-				4BDF645D22F9B3C7002936DE /* ImageDownloader.swift */,
-			);
-			path = "Image Load Model";
-			sourceTree = "<group>";
-		};
-		4BDF649422F9B589002936DE /* RSS Parse Model */ = {
-			isa = PBXGroup;
-			children = (
-				4BDF646022F9B3C7002936DE /* RSSParser.swift */,
-				4BDF645122F9B3C6002936DE /* RSSParserDelegate.swift */,
-			);
-			path = "RSS Parse Model";
-			sourceTree = "<group>";
-		};
 		4BDF649522F9B5B0002936DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4BDF649722F9B63C002936DE /* Drawing Model */,
-				4BDF649622F9B5BE002936DE /* Core Data Model */,
-				4BDF649222F9B523002936DE /* Image Load Model */,
-				4BDF649422F9B589002936DE /* RSS Parse Model */,
+				4BDF649622F9B5BE002936DE /* Core Data */,
+				4BDF645D22F9B3C7002936DE /* ImageDownloader.swift */,
+				4BDF646022F9B3C7002936DE /* RSSParser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		4BDF649622F9B5BE002936DE /* Core Data Model */ = {
+		4BDF649622F9B5BE002936DE /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
 				4BDF644722F9B3C5002936DE /* Category.swift */,
@@ -203,18 +192,19 @@
 				4BDF645E22F9B3C7002936DE /* News Reader.xcdatamodeld */,
 				4BDF645A22F9B3C6002936DE /* CoreDataStack.swift */,
 			);
-			path = "Core Data Model";
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
-		4BDF649722F9B63C002936DE /* Drawing Model */ = {
+		4BDF649722F9B63C002936DE /* Drawing View  */ = {
 			isa = PBXGroup;
 			children = (
 				4BDF646622F9B3C7002936DE /* BrushSettingsViewController.h */,
 				4BDF646A22F9B3C8002936DE /* BrushSettingsViewController.m */,
 				4BDF646422F9B3C7002936DE /* DrawingViewController.h */,
 				4BDF646922F9B3C8002936DE /* DrawingViewController.m */,
+				4BDF64A822FAB52B002936DE /* DrawingViewController.storyboard */,
 			);
-			path = "Drawing Model";
+			path = "Drawing View ";
 			sourceTree = "<group>";
 		};
 		4BDF649822F9B66A002936DE /* News Detailed Table */ = {
@@ -250,35 +240,36 @@
 		4BDF649C22F9B761002936DE /* Favorites Table View */ = {
 			isa = PBXGroup;
 			children = (
-				4BDF649D22F9B786002936DE /* Table View */,
+				4BDF646122F9B3C7002936DE /* FavoritesTableView.storyboard */,
 				4BDF646822F9B3C8002936DE /* FavoritesTableViewController.swift */,
 			);
 			path = "Favorites Table View";
 			sourceTree = "<group>";
 		};
-		4BDF649D22F9B786002936DE /* Table View */ = {
-			isa = PBXGroup;
-			children = (
-				4BDF646122F9B3C7002936DE /* FavoritesTableView.storyboard */,
-			);
-			path = "Table View";
-			sourceTree = "<group>";
-		};
 		4BDF649E22F9B798002936DE /* Web View */ = {
 			isa = PBXGroup;
 			children = (
-				4BDF649F22F9B7A6002936DE /* View */,
-				4BDF646722F9B3C8002936DE /* WebViewController.swift */,
+				4BDF64AA22FAB7AA002936DE /* WebView.xib */,
+				4BDF64AC22FC005D002936DE /* WebViewController.swift */,
 			);
 			path = "Web View";
 			sourceTree = "<group>";
 		};
-		4BDF649F22F9B7A6002936DE /* View */ = {
+		4BDF64A422FAB0B6002936DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4BDF645222F9B3C6002936DE /* WebViewStoryboard.storyboard */,
+				4BDF64A522FAB0B7002936DE /* WebKit.framework */,
 			);
-			path = View;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BDF64A722FAB144002936DE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4BF47A8722FC1C8500D64840 /* String+FormatData.swift */,
+				4BDF644D22F9B3C5002936DE /* UIImageView+ImageSetters.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,10 +335,11 @@
 				4BDF643F22F9B2EA002936DE /* LaunchScreen.storyboard in Resources */,
 				4BDF647322F9B3C8002936DE /* NewsDetailedTableView.storyboard in Resources */,
 				4BDF648322F9B3C8002936DE /* FavoritesTableView.storyboard in Resources */,
-				4BDF647622F9B3C8002936DE /* WebViewStoryboard.storyboard in Resources */,
 				4BDF643C22F9B2EA002936DE /* Assets.xcassets in Resources */,
 				4BDF646E22F9B3C8002936DE /* NewsCell.xib in Resources */,
 				4BDF646F22F9B3C8002936DE /* ImageNewsCell.xib in Resources */,
+				4BDF64A922FAB52B002936DE /* DrawingViewController.storyboard in Resources */,
+				4BDF64AB22FAB7AA002936DE /* WebView.xib in Resources */,
 				4BDF643722F9B2E9002936DE /* NewsTableVIew.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,11 +352,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BDF647E22F9B3C8002936DE /* CoreDataStack.swift in Sources */,
-				4BDF647522F9B3C8002936DE /* RSSParserDelegate.swift in Sources */,
+				4BDF64AD22FC005D002936DE /* WebViewController.swift in Sources */,
 				4BDF647722F9B3C8002936DE /* Media.swift in Sources */,
 				4BDF648822F9B3C8002936DE /* FavoritesTableViewController.swift in Sources */,
 				4BDF647822F9B3C8002936DE /* Channel.swift in Sources */,
 				4BDF646C22F9B3C8002936DE /* NewsDetailTableViewController.swift in Sources */,
+				4BF47A8822FC1C8500D64840 /* String+FormatData.swift in Sources */,
 				4BDF648422F9B3C8002936DE /* DetailNewsCell.swift in Sources */,
 				4BDF647A22F9B3C8002936DE /* Item.swift in Sources */,
 				4BDF648022F9B3C8002936DE /* ImageDownloader.swift in Sources */,
@@ -373,7 +366,6 @@
 				4BDF647C22F9B3C8002936DE /* DetailImageNewsCell.swift in Sources */,
 				4BDF647B22F9B3C8002936DE /* Category+CoreDataProperties.swift in Sources */,
 				4BDF647F22F9B3C8002936DE /* Channel+CoreDataProperties.swift in Sources */,
-				4BDF648722F9B3C8002936DE /* WebViewController.swift in Sources */,
 				4BDF648122F9B3C8002936DE /* News Reader.xcdatamodeld in Sources */,
 				4BDF647922F9B3C8002936DE /* ImageNewsCell.swift in Sources */,
 				4BDF648922F9B3C8002936DE /* DrawingViewController.m in Sources */,

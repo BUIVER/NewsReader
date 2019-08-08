@@ -6,6 +6,11 @@
 //  Copyright © 2015 Alexey. All rights reserved.
 //
 
+// Change date layout
+// Fix back from Web view
+// 23:00 - 23 Sep 2019 
+
+
 import UIKit
 import CoreData
 
@@ -96,7 +101,7 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
         privateManagedContext.parent = self.managedContext
         
         privateManagedContext.perform {
-            DispatchQueue.main.async { () -> Void in
+            DispatchQueue.global().async { () -> Void in
                 if let url = URL(string: self.rssLink) {
                     let parser = RSSParser()
                     parser.delegate = self
@@ -194,7 +199,7 @@ class NewsTableViewController: UITableViewController, RSSParserDelegate {
             self.loadImagesForOnscreenRows()
         }
     }
-    
+ 
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.loadImagesForOnscreenRows()
     }
@@ -296,16 +301,11 @@ extension NewsTableViewController {
             DispatchQueue.main.async {
                 if indexPath.row == cell.tag {
                     cell.thumbnailImageView.setImageAnimated(image: image, interval: 0.2, animationOption: .transitionFlipFromTop)
+                    item.thumbnailImage = image
+                    CoreDataStack.instance.saveContext()
                 }
             }
             
-            item.thumbnailImage = image
-            
-            do {
-                try self.managedContext.save()
-            } catch let error as NSError {
-                print("Error: \(error) " + "description \(error.localizedDescription)")
-            }
             
             self.imageDownloadsInProgress.removeValue(forKey: indexPath)
             if self.imageDownloadsInProgress.count == 0 {

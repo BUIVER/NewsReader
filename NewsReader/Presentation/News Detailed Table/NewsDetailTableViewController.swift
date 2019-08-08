@@ -7,28 +7,35 @@
 //
 
 import UIKit
+import WebKit
 
-class NewsDetailTableViewController: UITableViewController {
+class NewsDetailTableViewController: UITableViewController, WKUIDelegate {
     var item: Item?
     
     let detailNewsCellIdentifier = "DetailNewsCell"
     let detailImageNewsCellIdentifier = "DetailImageNewsCell"
     let categoriesNewsCellIdentifier = "CategoriesNewsCell"
     let mediaNewsCellIdentifier = "MediaNewsCell"
-    
+    var webView = Bundle.main.loadNibNamed("WebView", owner: self, options: nil)?.first as? WebViewController
+    var snapshot: UIImage?
+    var currentUrl : URL?
     let itemLinkSegueIdentifier = "WebViewSegue"
     let categoryLinkSegueIdentifier = "CategoryLinkSegue"
     let mediaLinkSegueIdentifier = "MediaLinkSegue"
     let drawingSegueIdentifier = "DrawingSegue"
+    @IBOutlet weak var snapshotButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        webView?.titleString = item?.title
+        self.webView?.browserView.uiDelegate = self
+        self.currentUrl = self.item?.url
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 160.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.currentUrl = self.item?.url
         if let item = self.item {
             self.title = item.title
         }
@@ -42,13 +49,12 @@ class NewsDetailTableViewController: UITableViewController {
     }
     
     // MARK: - Unwind segues
-    
-    @IBAction func drawingExitSegue(_ segue:UIStoryboardSegue) {
-        
-    }
-    
-    @IBAction func webExitSegue(_ segue:UIStoryboardSegue) {
-        
+    @IBAction func webViewCall (_ sender: Any) {
+        webView?.navigation.title = self.title
+        guard let url = currentUrl else {return}
+        let request = URLRequest(url: url)
+        self.webView?.browserView.load(request)
+        self.show(webView!, sender: nil)
     }
     
     // MARK: - Table view data source
@@ -111,7 +117,7 @@ class NewsDetailTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.detailNewsCellIdentifier) as! DetailNewsCell
             
             cell.titleLabel.text = item.title
-            cell.dateLabel.text = item.date
+            cell.dateLabel.text = item.date?.formatDate()
             cell.authorLabel.text = item.creator
             cell.descriptionLabel.text = item.minifiedDescription
             
@@ -121,7 +127,7 @@ class NewsDetailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.detailImageNewsCellIdentifier) as! DetailImageNewsCell
         
         cell.titleLabel.text = item.title
-        cell.dateLabel.text = item.date
+        cell.dateLabel.text = item.date?.formatDate()
         cell.authorLabel.text = item.creator
         cell.descriptionLabel.text = item.minifiedDescription
         if let image = item.thumbnailImage {
@@ -132,58 +138,32 @@ class NewsDetailTableViewController: UITableViewController {
         
         return cell
     }
-    
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let item = self.item else {
-            return
-        }
-        
-        if segue.identifier == self.mediaLinkSegueIdentifier || segue.identifier == self.itemLinkSegueIdentifier || segue.identifier == self.categoryLinkSegueIdentifier {
-            guard let destination = segue.destination as? WebViewController else {
-                return
-            }
-            
-            if segue.identifier == self.itemLinkSegueIdentifier {
-                guard let url = item.url else {
-                    return
-                }
-                destination.url = url
-                return
-            }
-            
-            guard let indexPath = self.tableView.indexPathForSelectedRow else {
-                return
-            }
-        
-            if segue.identifier == self.categoryLinkSegueIdentifier {
-                let category = item.categories![indexPath.row] as! Category
-                guard let url = category.url else {
-                    return
-                }
-                destination.url = url
-                return
-            }
-            if segue.identifier == self.mediaLinkSegueIdentifier {
-                let media = item.media![indexPath.row] as! Media
-                guard let url = media.url else {
-                    return
-                }
-                destination.url = url
-                return
-            }
-        } else {
-            guard let destination = segue.destination as? DrawingViewController else {
-                return
-            }
-            
-            if segue.identifier == self.drawingSegueIdentifier {
-                if let thumbnailImage = item.thumbnailImage {
-                    destination.sourceImage = thumbnailImage
-                }
-            }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+            let cell = item?.categories![indexPath.row] as! Category
+            self.currentUrl = cell.url
+            webViewCall(self)
+            break
+        case 2:
+            let cell = item?.media![indexPath.row] as! Media
+            self.currentUrl = cell.url
+            webViewCall(self)
+            break
+        default:
+            break
         }
     }
+    // MARK: - Navigation
 }
- 
+/* extension NewsDetailTableViewController {
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        self.webView?.activityIndicator.startAnimating()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            }
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+            self.webView?.activityIndicator.stopAnimating()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}
+*/
